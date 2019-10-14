@@ -13,7 +13,7 @@
     - A production README.
 
 ## Wireframes
-  [wireframes](assets/images/wireframe.png)
+  ![wireframes](assets/images/wireframe.png)
 
 ## Architecture and Technologies
   Vibe is built with:
