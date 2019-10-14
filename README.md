@@ -1,15 +1,3 @@
-Technologies:
-JS
--choices for charts/ graph libraries
-* D3.js
-* p5.js
-* processing.js
-* Raphael.js
-
--audio api
-  tone js
-
-
 # README
 
 ## Background
@@ -30,6 +18,26 @@ JS
 ## Architecture and Technologies
   Vibe is built with:
   - `Javascript`
+  - `D3.js` + `HTML5` + Audio Api
+  - `Webpack` + `Babel` to bundle js files
+  In addition to the entry file:
+  - `parse.js` handles retrieval and computation of data.
+  - `chart.js` handles the logic for rendering visualization of audio file. 
+
+## Implementation Time
+  - Day 1
 
 
+
+
+Technologies:
+JS
+-choices for charts/ graph libraries
+* D3.js
+* p5.js
+* processing.js
+* Raphael.js
+
+-audio api
+  tone js
 
