@@ -16,13 +16,13 @@
   ![wireframes](assets/images/wireframe.png)
 
 ## Architecture and Technologies
-  Vibe is built with:
-  - `Javascript`
-  - `D3.js` + `HTML5` + Audio Api
-  - `Webpack` + `Babel` to bundle js files
-  In addition to the entry file:
-  - `parse.js` handles retrieval and computation of data.
-  - `chart.js` handles the logic for rendering visualization of audio file. 
+  - Vibe is built with:
+    - `Javascript`
+    - `D3.js` + `HTML5` + Audio Api
+    - `Webpack` + `Babel` to bundle js files
+  - In addition to the entry file:
+    - `parse.js` handles retrieval and computation of data.
+    - `chart.js` handles the logic for rendering visualization of audio file. 
 
 ## Implementation Time
   Day 1: Research about visualization on for audio data and other apis or graph libraries that can be used to render the data. Create a config files for the javascript project.
