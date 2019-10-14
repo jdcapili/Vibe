@@ -13,7 +13,7 @@
     - A production README.
 
 ## Wireframes
-  [wireframes](https://wireframe.cc/3c1veI)
+  [wireframes](assets/images/wireframe.png)
 
 ## Architecture and Technologies
   Vibe is built with:
@@ -25,19 +25,15 @@
   - `chart.js` handles the logic for rendering visualization of audio file. 
 
 ## Implementation Time
-  - Day 1
+  Day 1: Research about visualization on for audio data and other apis or graph libraries that can be used to render the data. Create a config files for the javascript project.
+  - create a backbone for the javascript file.
+  - try out audio apis.
+  Day 2: Build data visualization part of Vibe. Render an audio file's audio visualization as a background for vibe. Setup the javascript code to be able to use separate audio files.
+  Day 3: Create a canvas for Vibe. 
+  - Setup the board to produce keys that will appear with the music.
+  - Create controls that will match keys produced.
+  - Setup the code to increment points based on the keys matched.
 
-
-
-
-Technologies:
-JS
--choices for charts/ graph libraries
-* D3.js
-* p5.js
-* processing.js
-* Raphael.js
-
--audio api
-  tone js
-
+## Bonus Features
+  - allow players to type in a name and record their score.
+  - give players a choice on what to render for the audio visualization.
