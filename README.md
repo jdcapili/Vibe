@@ -12,6 +12,10 @@
     - A modal describing rules and controls for the game.
     - A production README.
 
+## Bonus Features
+  - allow players to type in a name and record their score.
+  - give players a choice on what to render for the audio visualization.
+
 ## Wireframes
   ![wireframes](assets/images/wireframe.png)
 
@@ -25,15 +29,13 @@
     - `chart.js` handles the logic for rendering visualization of audio file. 
 
 ## Implementation Time
-  Day 1: Research about visualization on for audio data and other apis or graph libraries that can be used to render the data. Create a config files for the javascript project.
-  - create a backbone for the javascript file.
-  - try out audio apis.
-  Day 2: Build data visualization part of Vibe. Render an audio file's audio visualization as a background for vibe. Setup the javascript code to be able to use separate audio files.
-  Day 3: Create a canvas for Vibe. 
-  - Setup the board to produce keys that will appear with the music.
-  - Create controls that will match keys produced.
-  - Setup the code to increment points based on the keys matched.
+  - Day 1: Research about visualization on for audio data and other apis or graph libraries that can be used to render the data. Create a config files for the javascript project.
+    - create a backbone for the javascript file.
+    - try out audio apis.
+  - Day 2: Build data visualization part of Vibe. Render an audio file's audio visualization as a background for vibe. Setup the javascript code to be able to use separate audio files.
+  - Day 3: Create a canvas for Vibe. 
+    - Setup the board to produce keys that will appear with the music.
+    - Create controls that will match keys produced.
+    - Setup the code to increment points based on the keys matched.
 
-## Bonus Features
-  - allow players to type in a name and record their score.
-  - give players a choice on what to render for the audio visualization.
+
