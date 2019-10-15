@@ -1,5 +1,4 @@
-import Buffer from './js/buffer.js';
-import Music from './js/music.js';
+
 
 
 const note = () => {
@@ -18,12 +17,17 @@ const note = () => {
   audio.src =
     "./assets/Feel So Close (Benny Benassi Remix) (Japan Bonus Track).mp3";
 
-  let src = context.createMediaElementSource(audio);
-  audio.play();
-  window.analyser = analyser;
-  window.src = src;
-  window.context = context;
-
+    let src = context.createMediaElementSource(audio);
+    src.connect(analyser);
+    let bufferLength = analyser.frequencyBinCount;
+    let dataArray = new Uint8Array(bufferLength);
+    analyser.getByteFrequencyData(dataArray);
+    window.analyser = analyser;
+    window.src = src;
+    window.context = context;
+    window.dataArray = dataArray;
+    
+    audio.play();
 };
 
 document.querySelector("button").addEventListener("click", note);
