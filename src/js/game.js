@@ -15,7 +15,7 @@ class Game {
         
     }
 
-    this.stopButton.onclick = () => this.visualizer.mediaElement.pause();
+    this.stopButton.onclick = () => this.visualizer.music.mediaElement.pause();
     this.visualInit();
 
         // this.playButton.onclick = () => {
@@ -58,7 +58,7 @@ class Game {
 
     
     
-    this.visualizer.mediaElement.play();
+    this.visualizer.music.mediaElement.play();
     window.visualizer = this.visualizer;
     this.visualizer.renderFrame();
   }
