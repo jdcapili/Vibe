@@ -6,7 +6,7 @@ class AudioSynth {
     this.audio = new THREE.Audio(this.listener);
     window.audio = this.audio;
     this.mediaElement = new Audio(
-      "assets/Feel So Close (Benny Benassi Remix) (Japan Bonus Track).mp3"
+      "assets/Sunday Morning.mp3"
     );
     
     this.mediaElement.autoplay = false;
@@ -14,9 +14,6 @@ class AudioSynth {
     this.mediaElement.hasPlaybackControl = true;
      window.mediaElement = this.mediaElement;
     // this.mediaElement.play();
-    
-    
-    
     
     
     this.bass = this.audio.context.createBiquadFilter();

@@ -7,7 +7,7 @@ class Sphere {
       vertexColors: THREE.FaceColors
     });
     this.sphereShape = new THREE.Mesh(this.geometry, this.material);
-
+    this.sphereShape.dynamic = true;
       let numSides = this.geometry.faces.length;
       for (let i = 0; i < numSides; i++) {
         let vertIndex = this.geometry.faces[i];
