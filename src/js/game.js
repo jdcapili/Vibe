@@ -6,7 +6,7 @@ class Game {
     this.playButton = document.getElementById("play-button");
     this.stopButton = document.getElementById("stop-button");
     this.audio = document.getElementById("audio");
-    
+    this.visualInit();
 
     this.playButton.onclick = () => {
       this.play();
@@ -16,7 +16,7 @@ class Game {
     }
 
     this.stopButton.onclick = () => this.visualizer.music.mediaElement.pause();
-    this.visualInit();
+    
 
         // this.playButton.onclick = () => {
         //   let sound = new THREE.PositionalAudio(this.visualizer.listener);
@@ -35,25 +35,13 @@ class Game {
         // };
   }
 
-  visualInit(){
-    // const context = new AudioContext();
-    // let src = context.createMediaElementSource(audio);
-    // const analyser = context.createAnalyser();
-    // src.connect(analyser);
-    // analyser.connect(context.destination);
-    // const bufferLength = analyser.frequencyBinCount;
-    // const dataArray = new Uint8Array(bufferLength);
-    
+  visualInit(){  
     this.visualizer = new Visualizer(this.canvas);
-    
-    
-
-
   }
 
   play(){
     
-    console.log("playing")
+    // console.log("playing")
 
 
     

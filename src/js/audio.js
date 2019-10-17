@@ -2,7 +2,7 @@ class AudioSynth {
   constructor(){
     this.listener = new THREE.AudioListener();
     
-    window.gain = this.gain;
+  
     this.audio = new THREE.Audio(this.listener);
     window.audio = this.audio;
     this.mediaElement = new Audio(
@@ -12,10 +12,21 @@ class AudioSynth {
     this.mediaElement.autoplay = false;
     this.mediaElement.loop = true;
     this.mediaElement.hasPlaybackControl = true;
+     window.mediaElement = this.mediaElement;
     // this.mediaElement.play();
-
+    
+    
+    
+    
+    
+    this.bass = this.audio.context.createBiquadFilter();
+    this.bass.type = "lowshelf";
+    this.bass.frequency.value = 1000; // switches to 400 in UI
+    this.bass.gain.value = -0.5;
+    this.audio.setFilter(this.bass);
+    // this.bass.connect(this.audio.context.destination);
+    window.bass = this.bass;
     this.audio.setMediaElementSource(this.mediaElement);
-      this.audio.volume = 0.25;
     this.analyser = new THREE.AudioAnalyser(this.audio, 1024);
     window.analyser = this.analyser;
   }
@@ -28,7 +39,7 @@ class AudioSynth {
 
   frequencySeparator(){
     let set1 = this.analyser.data.slice(0,128);
-    console.log(set1);
+    // console.log(set1);
   }
 }
 
