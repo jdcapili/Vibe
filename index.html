@@ -3,53 +3,37 @@
 
 <head>
     <meta charset="utf‐8">
-    <title> Hello web audio </title>
-        <style>
-            body {
-                margin: 0;
-            }
-        </style>
+    <title> V I B E </title>
         <script src="./dist/main.js"></script>
+        <link rel="stylesheet" href="./dist/main.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>Vibe</h1>
     <script src="src/three.js"></script>
-    <button id="play-button">Play</button>
-    <button id="stop-button">Stop</button>
-    
-    <script>
+    <h1>Vibe</h1>
+    <div class="game-container">
         
-                // var scene = new THREE.Scene();
-                // var camera = new THREE.PerspectiveCamera(
-                //     75,
-                //     window.innerWidth / window.innerHeight,
-                //     0.1,
-                //     1000
-                // );
+        <button id="play-button">Play</button>
+        <button id="stop-button">Stop</button>
+        <div class="controls">
+            <ul>
+                <li>D for <div class="red-circle"></div></li>
+                <li>F for <div class="green-circle"></div></li>
+                <li>J for <div class="blue-circle"></div></li>
+                <li>K for <div class="yellow-circle"></div></li>
+            </ul>
+        </div>
+        <div class="songs">
+            <input type="radio" name="Don't Wanna Know" id="1" checked>Don't Wanna Know</input>
+            <input type="radio" name="Feel So Close" id="2">Feel So Close</input>
+        </div>
+        <canvas id='canvas'></canvas>
+    </div>
+    
 
-                // var renderer = new THREE.WebGLRenderer();
-                // renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
-                // document.body.appendChild(renderer.domElement);
-
-                // var geometry = new THREE.BoxGeometry(1, 1, 1);
-                // var material = new THREE.MeshBasicMaterial();
-                // var cube = new THREE.Mesh(geometry, material);
-                // scene.add(cube);
-
-                // camera.position.z = 5;
-
-                // function animate() {
-                //     requestAnimationFrame(animate);
-                //     cube.rotation.x += 0.01;
-                //     cube.rotation.y += 0.01;
-                //     renderer.render(scene, camera);
-                // }
-                // animate();
-            
-    </script>
-
-    <canvas id='canvas' style="height: 100%; width: 100%;"></canvas>
+    
     <audio id='audio'></audio>
 </body>
 

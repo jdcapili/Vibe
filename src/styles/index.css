@@ -1,0 +1,44 @@
+
+.game-container {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  position: relative;
+  height: 100vh;
+}
+
+li{
+  display: flex;
+
+}
+ul{
+  background-color: gray;
+}
+
+.red-circle{
+  background-color: red;
+  height: 10px;
+  width: 10px;
+  margin-left: 5px;
+}
+
+.green-circle{
+  background-color: green;
+  height: 10px;
+  width: 10px;
+  margin-left: 5px;
+}
+.blue-circle{
+  background-color: blue;
+  height: 10px;
+  width: 10px;
+  margin-left: 5px;
+}
+.yellow-circle{
+  background-color: yellow;
+  height: 10px;
+  width: 10px;
+  margin-left: 5px;
+}

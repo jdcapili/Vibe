@@ -13,22 +13,18 @@ class KeyOne {
     this.moveForward = this.moveForward.bind(this);
   }
 
-  moveForward(){
+  moveForward(keyspeed){
     
       
       if(this.sphereShape.position.z > 8){
         this.sphereShape.position.z = 4;
       }else{
-        this.sphereShape.position.z += 0.08;
+        
+        this.sphereShape.position.z += keyspeed;
       }
       
   }
 
-  // detectBeat(maxFreq){
-  //   if(maxFreq === 255){
-  //     this.scene.add(this.sphereShape);
-  //   }
-  // }
 
 }
 

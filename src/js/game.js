@@ -1,11 +1,16 @@
 import Visualizer from './visualizer';
 
+
 class Game {
   constructor(){
     this.canvas = document.getElementById("canvas");
+
+
     this.playButton = document.getElementById("play-button");
     this.stopButton = document.getElementById("stop-button");
     this.audio = document.getElementById("audio");
+    this.score = 0;
+
     this.visualInit();
 
     this.playButton.onclick = () => {
@@ -17,7 +22,7 @@ class Game {
   }
 
   visualInit(){  
-    this.visualizer = new Visualizer(this.canvas);
+    this.visualizer = new Visualizer(this.canvas, this.score);
   }
 
   play(){
@@ -28,6 +33,8 @@ class Game {
     this.visualizer.music.mediaElement.play();
     window.visualizer = this.visualizer;
     this.visualizer.renderFrame();
+
+
   }
 }
 
