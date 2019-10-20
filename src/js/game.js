@@ -1,38 +1,59 @@
 import Visualizer from './visualizer';
-
+import AudioSynth from "./audio";
 
 class Game {
   constructor(){
     this.canvas = document.getElementById("canvas");
 
-
-    this.playButton = document.getElementById("play-button");
     this.stopButton = document.getElementById("stop-button");
     this.audio = document.getElementById("audio");
     this.score = 0;
-
-    this.visualInit();
-
-    this.playButton.onclick = () => {
-      this.play();
-    }
-
-    this.stopButton.onclick = () => this.visualizer.music.mediaElement.pause();
+    let scoreCard = document.getElementById("score-value");
     
+    scoreCard.innerText = this.score;
+    this.visualInit();
+    this.createSongList();
+
+    this.stopButton.onclick = () => this.music.mediaElement.pause();
+    
+  }
+
+  createSongList(){
+    let songList = document.getElementById("song-list");
+    let audioList = [
+      "Dont Wanna Know.mp3",
+      "Feel So Close.mp3",
+      "If I Lose Myself.mp3",
+      "Sunday Morning.mp3"
+    ];
+    audioList.forEach((songUrl) => {
+      let listItem = document.createElement("li");
+      listItem.append(songUrl);
+      listItem.onclick = () => this.play(songUrl);
+      songList.append(listItem);
+    })
+
+  }
+
+  static scoreUpdate(score){
+    let scoreCard = document.getElementById("score-value");
+    scoreCard.innerText = score;
+    // console.log(this.score)
   }
 
   visualInit(){  
     this.visualizer = new Visualizer(this.canvas, this.score);
   }
 
-  play(){
-
-
+  play(songUrl){
+    this.music = new AudioSynth(songUrl);
+    let songSelection = document.getElementsByClassName("song-selection")[0];
+    songSelection.classList.add("hide");
     
     
-    this.visualizer.music.mediaElement.play();
+    this.music.mediaElement.play();
     window.visualizer = this.visualizer;
-    this.visualizer.renderFrame();
+    this.visualizer.renderFrame(this.music);
 
 
   }

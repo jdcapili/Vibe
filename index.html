@@ -7,31 +7,40 @@
         <script src="./dist/main.js"></script>
         <link rel="stylesheet" href="./dist/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
-
+        <script src="src/three.js"></script>
 </head>
 
 <body>
-    <script src="src/three.js"></script>
-    <h1>Vibe</h1>
+    
     <div class="game-container">
         
         <button id="play-button">Play</button>
         <button id="stop-button">Stop</button>
         <div class="controls">
             <ul>
+                <h2>Controls</h2>
                 <li>D for <div class="red-circle"></div></li>
                 <li>F for <div class="green-circle"></div></li>
                 <li>J for <div class="blue-circle"></div></li>
                 <li>K for <div class="yellow-circle"></div></li>
             </ul>
         </div>
-        <div class="songs">
-            <input type="radio" name="Don't Wanna Know" id="1" checked>Don't Wanna Know</input>
-            <input type="radio" name="Feel So Close" id="2">Feel So Close</input>
+        <div class="score">
+            <h3>Score</h3>
+            <h3 id="score-value"></h3>
+        </div>
+
+        <div class="song-selection">
+            <h3>Please Select A Song</h3>
+            <ul id="song-list"></ul>
         </div>
         <canvas id='canvas'></canvas>
     </div>
     
+    <!-- <div class="songs">
+        <input type="radio" name="Don't Wanna Know" id="1" checked>Don't Wanna Know</input>
+        <input type="radio" name="Feel So Close" id="2">Feel So Close</input>
+    </div> -->
 
     
     <audio id='audio'></audio>

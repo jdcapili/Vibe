@@ -30,6 +30,10 @@ function PlayerInput(){
       that.key4[1] += 1;
       // console.log(that.key1);
     }
+
+    if(e.which === 32){
+      e.preventDefault();
+    }
   })
 
 
