@@ -32,7 +32,7 @@ class AudioSynth {
   }
 
   fetchNewFrequencies(){
-    // console.log("music")
+    
     this.analyser.getFrequencyData();
     this.analyser.needsUpdate = true;
 
