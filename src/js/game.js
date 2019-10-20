@@ -14,7 +14,11 @@ class Game {
     this.visualInit();
     this.createSongList();
 
-    this.stopButton.onclick = () => this.music.mediaElement.pause();
+    this.stopButton.onclick = () => {
+      this.music.mediaElement.pause();
+      this.music.mediaElement.currentTime = 0;
+      this.visualizer.stopAnimation();
+    };
     
   }
 

@@ -187,6 +187,10 @@ class Visualizer {
     
   }
 
+  stopAnimation(){
+    window.cancelAnimationFrame(this.id);
+  }
+
 
   renderFrame(music){
     this.music = music
