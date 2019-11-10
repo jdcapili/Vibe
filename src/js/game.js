@@ -14,12 +14,29 @@ class Game {
     this.visualInit();
     this.createSongList();
 
-    this.stopButton.onclick = () => {
-      this.music.mediaElement.pause();
-      this.music.mediaElement.currentTime = 0;
-      this.visualizer.stopAnimation();
-    };
+    this.gamePaused = null;
+
+    this.pauseGame();
     
+  }
+
+  pauseGame(){
+    document.addEventListener("keydown", e => {
+      if(e.which === 32){
+        debugger
+        if(!this.gamePaused){
+          debugger
+          this.music.mediaElement.pause();
+          this.visualizer.stopAnimation();
+          this.gamePaused = true;
+        }else if(this.gamePaused){
+          debugger
+          this.music.mediaElement.play();
+          this.visualizer.animate();
+          this.gamePaused = false;
+        }
+      }
+    })
   }
 
   createSongList(){
@@ -50,6 +67,8 @@ class Game {
   }
 
   play(songUrl){
+
+    this.gamePaused = false;
     this.music = new AudioSynth(songUrl);
     let songSelection = document.getElementsByClassName("song-selection")[0];
     songSelection.classList.add("hide");

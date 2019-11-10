@@ -57,36 +57,36 @@ class Visualizer {
 
     this.sphere.colorSwitch(maxFreq) 
 
-  for(let i = 1; i < 5; i++){
-    this.scene.children.some((child) => {
-      if(child.name === i.toString()){
-        if(child.position.z >= 8){
-          child.position.z = 4;
-          this.scene.remove(child)
+    for(let i = 1; i < 5; i++){
+      this.scene.children.some((child) => {
+        if(child.name === i.toString()){
+          if(child.position.z >= 8){
+            child.position.z = 4;
+            this.scene.remove(child)
+          }else{
+
+            if(i === 1) this.key1.moveForward(this.keyspeed);
+            if (i === 2) this.key2.moveForward(this.keyspeed);
+            if (i === 3) this.key3.moveForward(this.keyspeed);
+            if (i === 4) this.key4.moveForward(this.keyspeed);
+
+          }
         }else{
-
-          if(i === 1) this.key1.moveForward(this.keyspeed);
-          if (i === 2) this.key2.moveForward(this.keyspeed);
-          if (i === 3) this.key3.moveForward(this.keyspeed);
-          if (i === 4) this.key4.moveForward(this.keyspeed);
-
+          if(maxFreq === 255){
+            this.scene.add(this.key1.sphereShape);
+          }
+          if(set2Ave > 180){
+            this.scene.add(this.key2.sphereShape);
+          }
+          if(set3Ave > 150 && set3Ave < 180){
+            this.scene.add(this.key3.sphereShape);
+          }
+          if (set4Ave > 120 && set4Ave < 180) {
+            this.scene.add(this.key4.sphereShape);
+          }
         }
-      }else{
-        if(maxFreq === 255){
-          this.scene.add(this.key1.sphereShape);
-        }
-        if(set2Ave > 180){
-          this.scene.add(this.key2.sphereShape);
-        }
-        if(set3Ave > 150 && set3Ave < 180){
-          this.scene.add(this.key3.sphereShape);
-        }
-        if (set4Ave > 120 && set4Ave < 180) {
-          this.scene.add(this.key4.sphereShape);
-        }
-      }
-    });
-  }
+      });
+    }
 
     this.speedUp();
 
