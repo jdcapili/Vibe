@@ -14,6 +14,7 @@ class Visualizer {
     this.canvas = canvas;
     this.scene = new THREE.Scene();
     this.controls = new Controls(this.scene);
+    debugger
     window.controls = this.controls;
     window.scene = this.scene;
 

@@ -21,18 +21,21 @@ class Game {
   }
 
   pauseGame(){
+    let pauseMenu = document.getElementById('pause-menu')
     document.addEventListener("keydown", e => {
       if(e.which === 32){
-        debugger
+        
         if(!this.gamePaused){
-          debugger
+          
           this.music.mediaElement.pause();
           this.visualizer.stopAnimation();
+          pauseMenu.classList.toggle('hide-menu')
           this.gamePaused = true;
         }else if(this.gamePaused){
-          debugger
+          
           this.music.mediaElement.play();
           this.visualizer.animate();
+          pauseMenu.classList.toggle('hide-menu')
           this.gamePaused = false;
         }
       }
