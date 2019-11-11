@@ -13,13 +13,31 @@ class Game {
     scoreCard.innerText = this.score;
     this.visualInit();
     this.createSongList();
+    this.gamePaused = null;
 
-    this.stopButton.onclick = () => {
-      this.music.mediaElement.pause();
-      this.music.mediaElement.currentTime = 0;
-      this.visualizer.stopAnimation();
-    };
-    
+    this.pauseGame();
+  }
+
+  pauseGame(){
+    let pauseMenu = document.getElementById('pause-menu')
+    document.addEventListener("keydown", e => {
+      if(e.which === 32){
+        
+        if(!this.gamePaused){
+          
+          this.music.mediaElement.pause();
+          this.visualizer.stopAnimation();
+          pauseMenu.classList.toggle('hide-menu')
+          this.gamePaused = true;
+        }else if(this.gamePaused){
+          
+          this.music.mediaElement.play();
+          this.visualizer.animate();
+          pauseMenu.classList.toggle('hide-menu')
+          this.gamePaused = false;
+        }
+      }
+    })
   }
 
   createSongList(){
@@ -50,6 +68,8 @@ class Game {
   }
 
   play(songUrl){
+
+    this.gamePaused = false;
     this.music = new AudioSynth(songUrl);
     let songSelection = document.getElementsByClassName("song-selection")[0];
     songSelection.classList.add("hide");

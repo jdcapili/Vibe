@@ -1,10 +1,10 @@
 function PlayerInput(){
   let that = this;
 
-  that.key1 = [false,0];
-  that.key2 = [false,0];
-  that.key3 = false;
-  that.key4 = false;
+  that.key1 = [false, 0];
+  that.key2 = [false, 0];
+  that.key3 = [false, 0];
+  that.key4 = [false, 0];
 
   document.addEventListener("keydown", e => {
     if(e.key === "d") {

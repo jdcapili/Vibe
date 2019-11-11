@@ -120,7 +120,7 @@ ul {
   font-family: Monoton, Roboto;
 }
 
-.song-selection {
+.song-selection, #pause-menu {
   position: absolute;
   margin: auto;
   top: 0;
@@ -155,4 +155,13 @@ ul {
   opacity: 0;
   visibility: hidden;
   /* display: none; */
+}
+
+.hide-menu{
+  opacity: 0;
+  visibility: hidden;
+}
+
+div {
+    background: black;
 }

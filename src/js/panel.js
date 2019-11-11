@@ -1,5 +1,5 @@
 class Panel {
-  constructor(){
+  constructor(scene){
     let size = 15,
       step = 1;
     let floor = new THREE.Geometry();
@@ -14,6 +14,7 @@ class Panel {
     }
 
     this.line = new THREE.Line(floor, floorMat, THREE.LineSegments);
+    scene.add(this.line)
   }
 }
 
