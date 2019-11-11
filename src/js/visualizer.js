@@ -2,7 +2,7 @@
 import Sphere from './sphere';
 import Game from './game';
 import Panel from './panel';
-import KeyOne from './key1';
+import Key from './key';
 import PlayerInput from "./inputs";
 import Controls from './controls';
 
@@ -13,36 +13,34 @@ class Visualizer {
     this.playerInput = new PlayerInput();
     this.canvas = canvas;
     this.scene = new THREE.Scene();
-    this.controls = new Controls(this.scene);
-    debugger
-    window.controls = this.controls;
-    window.scene = this.scene;
-
-    this.camera = new THREE.PerspectiveCamera(
-      90,
-      (this.canvas.width) / (this.canvas.height),
-      0.1,
-      1000
-    );
-  
-
     this.container = document.getElementsByClassName("game-container")[0];
-   
+    this.setCamera();
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-    this.line = new Panel();
-    this.scene.add(this.line.line);
-    
-    this.keyspeed = 0.05;
-
-    window.renderer = this.renderer;
-    this.init();
     this.animate = this.animate.bind(this);
+    this.introAnimate = this.introAnimate.bind(this);
     this.id;
-      window.addEventListener('resize', this.onWindowResize, false);
 
+    this.openingElements();
+    this.introAnimate();
+    window.addEventListener('resize', this.onWindowResize, false);
+  }
 
+  openingElements(){
+    this.controls = new Controls(this.scene);
 
+    this.line = new Panel(this.scene);
+  }
+
+  inGameElements(){
+    this.keyspeed = 0.05;
+    this.sphere = new Sphere();
+    this.scene.add(this.sphere.sphereShape);
+
+    this.key1 = new Key(this.scene, -1.5, "red", "1");
+    this.key2 = new Key(this.scene, -0.5, "green", "2");
+    this.key3 = new Key(this.scene, 0.5, "blue", "3");
+    this.key4 = new Key(this.scene, 1.5, "yellow", "4");
   }
 
   onWindowResize(){
@@ -51,6 +49,12 @@ class Visualizer {
       this.container.clientWidth,
       this.container.clientHeight
     );
+  }
+
+  introAnimate(){
+    this.renderer.render(this.scene, this.camera);
+    this.controls.zoomIn();
+    this.id = window.requestAnimationFrame(this.introAnimate);
   }
 
   animate(){
@@ -166,26 +170,15 @@ class Visualizer {
   }
 
 
-  init(){
-
-    
-    this.sphere = new Sphere();
-    this.scene.add(this.sphere.sphereShape);
-
-    this.key1 = new KeyOne(this.scene,-1.5,"red",'1');
-    this.key2 = new KeyOne(this.scene, -0.5,"green",'2');
-    this.key3 = new KeyOne(this.scene, 0.5,"blue",'3');
-    this.key4 = new KeyOne(this.scene, 1.5,"yellow",'4');
-
-    
-
-    
-
+  setCamera(){
+    this.camera = new THREE.PerspectiveCamera(
+      90,
+      this.canvas.width / this.canvas.height,
+      0.1,
+      1000
+    );
     this.camera.position.z = 10; //return to 10
-
     this.camera.position.y = 2; // return to 2
-    
-    
   }
 
   stopAnimation(){
@@ -201,7 +194,7 @@ class Visualizer {
 
     this.musicMarkers = [musicTimeDiv, musicTimeDiv * 2, musicTimeDiv * 3];
 
-
+    this.inGameElements();
        
         
     this.animate();

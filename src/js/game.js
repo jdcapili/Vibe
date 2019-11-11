@@ -13,11 +13,9 @@ class Game {
     scoreCard.innerText = this.score;
     this.visualInit();
     this.createSongList();
-
     this.gamePaused = null;
 
     this.pauseGame();
-    
   }
 
   pauseGame(){
