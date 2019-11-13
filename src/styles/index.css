@@ -18,16 +18,11 @@ body{
 }
 
 li{
-
+  cursor: pointer;
   display: flex;
   color: white;
 }
-/* ul{
 
-  background-color: gray;
-  display: flex;
-  flex-direction: column;
-} */
 
 .red-circle{
   background-color: red;

@@ -10,25 +10,21 @@ function PlayerInput(){
     if(e.key === "d") {
       that.key1[0] = true;
       that.key1[1] += 1;
-      // console.log(that.key1);
     }
 
     if (e.key === "f") {
       that.key2[0] = true;
       that.key2[1] += 1;
-      // console.log(that.key1);
     }
 
     if (e.key === "j") {
       that.key3[0] = true;
       that.key3[1] += 1;
-      // console.log(that.key1);
     }
 
     if (e.key === "k") {
       that.key4[0] = true;
       that.key4[1] += 1;
-      // console.log(that.key1);
     }
 
     if(e.which === 32){
