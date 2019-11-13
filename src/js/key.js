@@ -21,7 +21,6 @@ class Key {
   }
 
   moveForward(keyspeed){
-    
     this.colorSwitch();
     if(this.sphereShape.position.z > 8){
       this.sphereShape.position.z = 4;
