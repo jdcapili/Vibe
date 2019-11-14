@@ -20,6 +20,7 @@ class Game {
     this.setMenuEvents();
     this.togglePause = this.togglePause.bind(this);
     this.playRound = this.playRound.bind(this);
+    this.jumpToMainMenu = this.jumpToMainMenu.bind(this);
   }
 
   pauseGame() {
@@ -48,7 +49,20 @@ class Game {
   restartCurrentSong() {
     this.togglePause();
     this.visualizer.restartRound();
+    this.score = 0;
+    Game.scoreUpdate(this.score);
     this.playRound(this.curSongUrl);
+  }
+
+  jumpToMainMenu(){
+    this.togglePause();
+    this.visualizer.restartRound();
+    let songSelection = document.getElementsByClassName(
+      "song-selection"
+    )[0];
+    this.score = 0;
+    Game.scoreUpdate(this.score);
+    songSelection.classList.remove("hide");
   }
 
   createSongList() {
@@ -83,7 +97,7 @@ class Game {
       this.restartCurrentSong();
     });
     quitButton.addEventListener("click", () => {
-      
+      this.jumpToMainMenu();
     })
   }
 

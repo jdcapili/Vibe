@@ -83,6 +83,7 @@ class Visualizer {
 
     if(this.currentSong.currentTime === this.musicDuration){
       this.restartRound();
+      Game.scoreUpdate(this.score);
       let songSelection = document.getElementsByClassName(
         "song-selection"
       )[0];
@@ -190,14 +191,17 @@ class Visualizer {
   }
 
   clearExistingKeys() {
+    
     this.scene.remove(this.key1.sphereShape);
     this.scene.remove(this.key2.sphereShape);
     this.scene.remove(this.key3.sphereShape);
     this.scene.remove(this.key4.sphereShape);
+    
   }
 
   restartRound() {
     this.clearExistingKeys();
+    this.score = 0;
     this.currentSong.pause();
     this.currentSong.currentTime = 0;
     this.scene.remove(this.sphere.sphereShape);
