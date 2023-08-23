@@ -1,10 +1,10 @@
-// import { THREE } from '../three';
 import Sphere from './sphere';
 import Game from './game';
 import Panel from './panel';
 import Key from './key';
 import PlayerInput from "./inputs";
 import Controls from './controls';
+import HitZone from './hitZone';
 
 
 class Visualizer {
@@ -40,6 +40,11 @@ class Visualizer {
     this.keyspeed = 0.05;
     this.sphere = new Sphere();
     this.scene.add(this.sphere.sphereShape);
+
+    this.hitZone1 = new HitZone(this.scene, -1.5, "red", "hitZone1");
+    this.hitZone2 = new HitZone(this.scene, -0.5, "green", "hitZone2");
+    this.hitZone3 = new HitZone(this.scene, 0.5, "blue", "hitZone3");
+    this.hitZone4 = new HitZone(this.scene, 1.5, "yellow", "hitZone4");
 
     this.key1 = new Key(this.scene, -1.5, "red", "1");
     this.key2 = new Key(this.scene, -0.5, "green", "2");
@@ -144,6 +149,7 @@ class Visualizer {
     ) {
       if (this.playerInput.key1[1] === 1) {
         this.score += 20;
+        // this.key1.sphereShape.material.color.setHex("#00CCCC")
         Game.scoreUpdate(this.score);
         this.key1.sphereShape.position.z = 4;
         this.scene.remove(this.key1.sphereShape);
@@ -157,6 +163,7 @@ class Visualizer {
     ) {
       if (this.playerInput.key2[1] === 1) {
         this.score += 20;
+        // this.key2.sphereShape.material.color.setHex("#00CCCC")
         Game.scoreUpdate(this.score);
         this.key2.sphereShape.position.z = 4;
         this.scene.remove(this.key2.sphereShape);
@@ -170,6 +177,7 @@ class Visualizer {
     ) {
       if (this.playerInput.key3[1] === 1) {
         this.score += 20;
+        // this.key3.sphereShape.material.color.setHex("#00CCCC")
         Game.scoreUpdate(this.score);
         this.key3.sphereShape.position.z = 4;
         this.scene.remove(this.key3.sphereShape);
@@ -183,6 +191,7 @@ class Visualizer {
     ) {
       if (this.playerInput.key4[1] === 1) {
         this.score += 20;
+        // this.key4.sphereShape.material.color.setHex("#00CCCC")
         Game.scoreUpdate(this.score);
         this.key4.sphereShape.position.z = 4;
         this.scene.remove(this.key4.sphereShape);
