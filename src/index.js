@@ -3,9 +3,9 @@ import './styles/index.css'
 
 window.addEventListener("DOMContentLoaded", () => {
 
-const game = new Game();
+    const game = new Game();
 
-// this.playButton = document.getElementsByClassName("play-button");
+    // this.playButton = document.getElementsByClassName("play-button");
 });
 
 
