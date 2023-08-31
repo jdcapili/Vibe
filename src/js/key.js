@@ -1,16 +1,11 @@
+import { keyColors } from "../shared/colors";
 class Key {
   constructor(scene, startPos,color,name){
-    this.colors = {
-      red: "0xFF0000",
-      blue: "0x0000ff",
-      yellow: "0xffff00",
-      green: "0x00ff00"
-    };
-    this.color = color;
-    this.scene = scene;
-    this.geometry = new THREE.SphereGeometry(0.5, 10, 10);
+    this.color = keyColors[color]
+    this.geometry = new THREE.SphereGeometry(0.5, 7, 10);
     this.material = new THREE.MeshBasicMaterial();
     this.sphereShape = new THREE.Mesh(this.geometry, this.material);
+    this.sphereShape.material.color.setHex(this.color)
     this.sphereShape.name = name;
     this.sphereShape.position.set(startPos,0.5,4);
 
@@ -18,7 +13,6 @@ class Key {
   }
 
   moveForward(keyspeed){
-    this.colorSwitch();
     if(this.sphereShape.position.z > 8){
       this.sphereShape.position.z = 4;
     }else{

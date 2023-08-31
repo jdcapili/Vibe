@@ -150,6 +150,7 @@ class Visualizer {
       if (this.playerInput.key1[1] === 1) {
         this.score += 20;
         // this.key1.sphereShape.material.color.setHex("#00CCCC")
+        this.hitZone1.colorSwitch();
         Game.scoreUpdate(this.score);
         this.key1.sphereShape.position.z = 4;
         this.scene.remove(this.key1.sphereShape);
@@ -164,6 +165,7 @@ class Visualizer {
       if (this.playerInput.key2[1] === 1) {
         this.score += 20;
         // this.key2.sphereShape.material.color.setHex("#00CCCC")
+        this.hitZone2.colorSwitch();
         Game.scoreUpdate(this.score);
         this.key2.sphereShape.position.z = 4;
         this.scene.remove(this.key2.sphereShape);
@@ -178,6 +180,7 @@ class Visualizer {
       if (this.playerInput.key3[1] === 1) {
         this.score += 20;
         // this.key3.sphereShape.material.color.setHex("#00CCCC")
+        this.hitZone3.colorSwitch();
         Game.scoreUpdate(this.score);
         this.key3.sphereShape.position.z = 4;
         this.scene.remove(this.key3.sphereShape);
@@ -192,6 +195,7 @@ class Visualizer {
       if (this.playerInput.key4[1] === 1) {
         this.score += 20;
         // this.key4.sphereShape.material.color.setHex("#00CCCC")
+        this.hitZone4.colorSwitch();
         Game.scoreUpdate(this.score);
         this.key4.sphereShape.position.z = 4;
         this.scene.remove(this.key4.sphereShape);
