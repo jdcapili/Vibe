@@ -13,7 +13,7 @@ class Game {
     scoreCard.innerText = this.score;
     this.visualInit();
     this.createSongList();
-    this.gamePaused = null;
+    this.gamePaused = true;
     this.curSongUrl = null;
 
     this.pauseGame();
@@ -50,6 +50,7 @@ class Game {
     this.togglePause();
     this.visualizer.restartRound();
     this.score = 0;
+    this.gamePaused = true;
     Game.scoreUpdate(this.score);
     this.playRound(this.curSongUrl);
   }
@@ -61,6 +62,7 @@ class Game {
       "song-selection"
     )[0];
     this.score = 0;
+    this.gamePaused = true;
     Game.scoreUpdate(this.score);
     songSelection.classList.remove("hide");
   }
@@ -112,14 +114,16 @@ class Game {
   }
 
   playRound(songUrl) {
-    this.gamePaused = false;
-    this.music = new AudioSynth(songUrl + ".mp3");
-    let songSelection = document.getElementsByClassName("song-selection")[0];
-    songSelection.classList.add("hide");
-
-    this.currentSong = this.music.mediaElement;
-    this.currentSong.play();
-    this.visualizer.renderFrame(this.music);
+    if(this.gamePaused === true){
+      this.gamePaused = false;
+      this.music = new AudioSynth(songUrl + ".mp3");
+      let songSelection = document.getElementsByClassName("song-selection")[0];
+      songSelection.classList.add("hide");
+  
+      this.currentSong = this.music.mediaElement;
+      this.currentSong.play();
+      this.visualizer.renderFrame(this.music);
+    }
   }
 }
 
