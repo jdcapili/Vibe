@@ -20,13 +20,16 @@ class Visualizer {
       this.container.clientWidth,
       this.container.clientHeight
     );
+    
     this.animate = this.animate.bind(this);
     this.introAnimate = this.introAnimate.bind(this);
     this.id;
 
     this.openingElements();
     this.introAnimate();
-    window.addEventListener("resize", this.onWindowResize, false);
+
+    window.addEventListener("resize", () => this.onWindowResize(), false);
+
     this.startRound = this.startRound.bind(this);
   }
 
@@ -53,11 +56,13 @@ class Visualizer {
   }
 
   onWindowResize() {
-    this.container = document.getElementsByClassName("game-container")[0];
     this.renderer.setSize(
       this.container.clientWidth,
       this.container.clientHeight
     );
+
+    this.camera.aspect = this.canvas.width / this.canvas.height;
+    this.camera.updateProjectionMatrix();
   }
 
   introAnimate() {
