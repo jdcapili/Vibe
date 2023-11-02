@@ -72,10 +72,7 @@ class Game {
     let audioList = [
       "Dont Wanna Know",
       "Feel So Close",
-      "If I Lose Myself",
-      "Sunday Morning",
       "Finesse",
-      "What Do You Mean",
       "Starboy"
     ];
     audioList.forEach(songUrl => {
