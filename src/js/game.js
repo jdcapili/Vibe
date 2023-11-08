@@ -70,13 +70,16 @@ class Game {
   createSongList() {
     let songList = document.getElementById("song-list");
     let audioList = [
-      "Dont Wanna Know",
-      "Feel So Close",
-      "Finesse",
-      "Starboy"
+      ["Dont Wanna Know", 1],
+      ["Feel So Close", 2],
+      ["Finesse", 3],
+      ["Starboy", 4]
     ];
-    audioList.forEach(songUrl => {
+    audioList.forEach((songData) => {
+      let [songUrl, number] = songData;
       let listItem = document.createElement("li");
+      listItem.setAttribute('id', `song-id-${number}`);
+      listItem.setAttribute('class', 'cards');
       listItem.append(songUrl);
       listItem.onclick = () => {
         this.curSongUrl = songUrl;
