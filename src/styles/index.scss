@@ -1,3 +1,8 @@
+@import "/node_modules/flickity/dist/flickity.min.css";
+@import "./variables.scss";
+
+$outerBoxShadow: $gray 0px 3px 8px;
+
 .game-container {
     height: 100%;
     width: 100%;
@@ -5,6 +10,8 @@
 
 div{
     border-radius: 10px;
+    background: black;
+    font-size: calc(12px + 0.5vw);
 }
 
 body{
@@ -20,37 +27,27 @@ li{
     cursor: pointer;
     display: flex;
     color: white;
+    align-items: center;
 }
 
-
-.red-circle{
-    background-color: red;
+.circle-keys {
     height: 20px;
     width: 20px;
     margin-left: 5px;
-    border-radius: 10px;
+    clip-path: circle(50%);
 }
 
-.green-circle{
-    background-color: green;
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    border-radius: 10px;
+.red-key{
+    background-color: $red;
 }
-.blue-circle{
-    background-color: blue;
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    border-radius: 10px;
+.green-key{
+    background-color: $green;
 }
-.yellow-circle{
-    background-color: yellow;
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    border-radius: 10px;
+.blue-key{
+    background-color: $blue;
+}
+.yellow-key{
+    background-color: $yellow;
 }
 
 
@@ -69,22 +66,29 @@ button#stop-button {
 
 .controls {
     position: absolute;
-    top: 10%;
-    border: 1px solid white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: $outerBoxShadow;
+    margin: auto 0 auto 5%;
     height: 30%;
     width: 20%;
-    font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 0.15rem;
 }
 
 .score{
     position: absolute;
-    top: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
     height: 30%;
     width: 20%;
-    border: 1px solid white;
+    box-shadow: $outerBoxShadow;
+    margin-right: 5%;
+    margin: auto 5% auto 0;
 }
 
 #score-value, .score h3{
@@ -121,8 +125,6 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-
-    border: 1px solid white;
     height: 40%;
     width: 40%;
     font-size: x-large;
@@ -130,19 +132,40 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: $outerBoxShadow;
 }
 
-.song-selection h3{
-    color: white;
-    margin: 0;
-    margin-bottom: 5px;
-    font-family: Monoton, Roboto;
+.song-selection{
+    height: 45%;
+    h3{
+        color: white;
+        margin: 0;
+        margin-bottom: 5px;
+        font-family: Monoton, Roboto;
+    }
+
+    #song-list{
+        width: 90%;
+        height: 50%;
+        background: white;
+        font-family: Roboto;
+        .carousel-cell{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 100%;
+            width: 30%;
+            cursor: pointer;
+            img {
+                height: 80%;
+            }
+        }
+    }
 }
 
-.song-selection ul{
-    color: white;
-    font-family: Roboto;
-}
 
 .hide{
     transition: 1s;
@@ -156,6 +179,7 @@ ul {
     visibility: hidden;
 }
 
-div {
-    background: black;
+// focus override. default is a blue box shadow around the button
+.flickity-button:focus {
+    box-shadow: none;
 }

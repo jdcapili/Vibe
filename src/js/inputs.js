@@ -34,7 +34,7 @@ function PlayerInput(){
 
 
   document.addEventListener("keyup", e => {
-    if (e.key === "d") that.key1 = [false,0];
+    if (e.key === "d") that.key1 = [false, 0];
     if (e.key === "f") that.key2 = [false, 0];
     if (e.key === "j") that.key3 = [false, 0];
     if (e.key === "k") that.key4 = [false, 0];
