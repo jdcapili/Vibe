@@ -1,5 +1,6 @@
 import Visualizer from './visualizer';
 import AudioSynth from "./audio";
+import Flickity from 'flickity';
 
 class Game {
   constructor() {
@@ -70,19 +71,27 @@ class Game {
   createSongList() {
     let songList = document.getElementById("song-list");
     let audioList = [
-      "Dont Wanna Know",
-      "Feel So Close",
-      "Finesse",
-      "Starboy"
+      ["Dont Wanna Know", 1],
+      ["Feel So Close", 2],
+      ["Finesse", 3],
+      ["Starboy", 4]
     ];
-    audioList.forEach(songUrl => {
-      let listItem = document.createElement("li");
+    audioList.forEach((songData) => {
+      let [songUrl, number] = songData;
+      let listItem = document.createElement("div");
+      listItem.setAttribute('id', `song-id-${number}`);
+      listItem.setAttribute('class', 'carousel-cell');
+      let imgTag = document.createElement('img');
+      imgTag.src = `assets/images/album art/${songUrl}.jpeg`;
+      listItem.appendChild(imgTag);
       listItem.append(songUrl);
       listItem.onclick = () => {
         this.curSongUrl = songUrl;
         this.playRound(songUrl)};
       songList.append(listItem);
     });
+
+    new Flickity(songList, {wrapAround: true, accessibility: false})
   }
 
   setMenuEvents() {
@@ -103,7 +112,6 @@ class Game {
   static scoreUpdate(score) {
     let scoreCard = document.getElementById("score-value");
     scoreCard.innerText = score;
-    // console.log(this.score)
   }
 
   visualInit() {

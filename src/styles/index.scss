@@ -1,0 +1,185 @@
+@import "/node_modules/flickity/dist/flickity.min.css";
+@import "./variables.scss";
+
+$outerBoxShadow: $gray 0px 3px 8px;
+
+.game-container {
+    height: 100%;
+    width: 100%;
+}
+
+div{
+    border-radius: 10px;
+    background: black;
+    font-size: calc(12px + 0.5vw);
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+#canvas{
+    height: 100vh;
+}
+
+li{
+    cursor: pointer;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.circle-keys {
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    clip-path: circle(50%);
+}
+
+.red-key{
+    background-color: $red;
+}
+.green-key{
+    background-color: $green;
+}
+.blue-key{
+    background-color: $blue;
+}
+.yellow-key{
+    background-color: $yellow;
+}
+
+
+.game-container {
+    position: relative;
+}
+
+button#play-button {
+    position: absolute;
+}
+
+button#stop-button {
+    position: absolute;
+    left: 50px;
+}
+
+.controls {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: $outerBoxShadow;
+    margin: auto 0 auto 5%;
+    height: 30%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.15rem;
+}
+
+.score{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 30%;
+    width: 20%;
+    box-shadow: $outerBoxShadow;
+    margin-right: 5%;
+    margin: auto 5% auto 0;
+}
+
+#score-value, .score h3{
+    color: white;
+    font-family: Monoton, Roboto;
+    font-size: 50px;
+    margin: 0;
+}
+
+.score{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    margin: 0;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding: 0;
+    margin: 0;
+    font-family: Monoton, Roboto;
+}
+
+.song-selection, #pause-menu {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    width: 40%;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $outerBoxShadow;
+}
+
+.song-selection{
+    height: 45%;
+    h3{
+        color: white;
+        margin: 0;
+        margin-bottom: 5px;
+        font-family: Monoton, Roboto;
+    }
+
+    #song-list{
+        width: 90%;
+        height: 50%;
+        background: white;
+        font-family: Roboto;
+        .carousel-cell{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 100%;
+            width: 30%;
+            cursor: pointer;
+            img {
+                height: 80%;
+            }
+        }
+    }
+}
+
+
+.hide{
+    transition: 1s;
+    opacity: 0;
+    visibility: hidden;
+    /* display: none; */
+}
+
+.hide-menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+// focus override. default is a blue box shadow around the button
+.flickity-button:focus {
+    box-shadow: none;
+}

@@ -1,4 +1,4 @@
-import { keyColors } from "../shared/colors";
+import { keyColors } from "../shared/variables";
 class HitZone {
 	constructor(scene,startPos,color,name){
 		this.color = keyColors[color]

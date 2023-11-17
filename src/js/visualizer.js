@@ -49,10 +49,10 @@ class Visualizer {
     this.hitZone3 = new HitZone(this.scene, 0.5, "blue", "hitZone3");
     this.hitZone4 = new HitZone(this.scene, 1.5, "yellow", "hitZone4");
 
-    this.key1 = new Key(this.scene, -1.5, "red", "1");
-    this.key2 = new Key(this.scene, -0.5, "green", "2");
-    this.key3 = new Key(this.scene, 0.5, "blue", "3");
-    this.key4 = new Key(this.scene, 1.5, "yellow", "4");
+    this.key1 = new Key(-1.5, "red", "1");
+    this.key2 = new Key(-0.5, "green", "2");
+    this.key3 = new Key(0.5, "blue", "3");
+    this.key4 = new Key(1.5, "yellow", "4");
   }
 
   onWindowResize() {

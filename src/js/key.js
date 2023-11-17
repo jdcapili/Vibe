@@ -1,6 +1,6 @@
-import { keyColors } from "../shared/colors";
+import { keyColors } from "../shared/variables";
 class Key {
-  constructor(scene, startPos,color,name){
+  constructor(startPos,color,name){
     this.color = keyColors[color]
     this.geometry = new THREE.SphereGeometry(0.5, 7, 10);
     this.material = new THREE.MeshBasicMaterial();
