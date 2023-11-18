@@ -1,6 +1,6 @@
 {
   "name": "Vibe",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "## Background   Vibe is a music game based on Tap Tap/Guitar Hero that also displays audio visualization. An audio file will produce a set of keys that the player should match. Each time a player correctly matches the key, he earns points.",
   "main": "index.js",
   "browserslist": [
@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.dev.js",
     "webpack:watch": "webpack --watch --config webpack.dev.js",
-    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
+    "webpack:build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
